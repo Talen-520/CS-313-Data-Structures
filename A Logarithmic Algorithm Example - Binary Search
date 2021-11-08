@@ -1,0 +1,27 @@
+public static boolean binary_search(int search_value, int[] arr)
+{
+  int min_index, max_index, mid_index;
+
+  min_index = 0;
+  max_index = arr.length - 1;
+  while (max_index >= min_index)
+  {
+    mid_index = (int) (min_index + max_index) / 2;
+    if (arr[mid_index] == search_value)
+    {
+      return true;
+    }
+    else
+    {
+      if (arr[mid_index] < search_value)
+      {
+        min_index = mid_index + 1;
+      }
+      else
+      {
+        max_index = mid_index - 1;
+      }
+    }
+  }
+  return false;
+}
